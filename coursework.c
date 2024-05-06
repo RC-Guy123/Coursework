@@ -1,17 +1,14 @@
-// Add brief description here
+// Austin Jewell, ID:11116019
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-// Enter any other #includes that you deem necessary below
 #define NUMROWS 9     // map size
 #define NUMCOLS 9     // map size
 #define NUMWALKS 1000 // number of random walks; 1000
 #define NUMSTEP 10    // number of steps in each walk
-// Enter any other #defines as you deem necessary below
 int main(void)
 {
     srand(123456);
-    // Load the map
     FILE *file = fopen("island_map.txt", "r");
     if (file == NULL)
     {
@@ -35,16 +32,13 @@ int main(void)
             }
         }
     }
-    // Open the file
-    // Read the characters from the file into the array
     for (j = 0; j < NUMCOLS; j++)
     {
         for (i = 0; i < NUMROWS; i++)
         {
-            fscanf(file, " %c", &map[i][j]); // Note the space before %c to skip whitespace
+            fscanf(file, " %c", &map[i][j]);
         }
     }
-    // Close the file
     fclose(file);
     for (j = 0; j < NUMCOLS; j++)
     {
@@ -276,5 +270,4 @@ int main(void)
     while (1)
     {
     }
-    // Print results
 }
